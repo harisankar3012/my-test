@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.writeln("<br>")
+        var a=[58,2,42,55,4,43,10,23,11] 
+        document.writeln("The unsorted array is:"+a ,"<br> <br> <br>")
+        document.writeln("The sorted array in descending order is:")
+        a.sort(function(a, b){return a - b});
+        for(i=a.length-1;i>=0;i--){
+            document.writeln(a[i],",")
+
+        }
+        
+    </script>
+</body>
+</html>
