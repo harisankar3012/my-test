@@ -1,0 +1,102 @@
+<!-- 1.Create a basic calculator using HTML, CSS, and JavaScript with the functionality of add, subtract, multiply and divide. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <style>
+        h1{
+            text-align: center;
+            color: rgb(153, 15, 153);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        table{
+            text-align: center;
+            background-color: aqua;
+            
+        }
+        input{
+            height: 80px;
+            width:80px;
+            background-color: chartreuse;
+        }
+        input:hover{
+            background-color: green;
+            border: 2px;
+        }
+        .box{
+            width: 90%;
+           
+
+        }
+        .box:hover{
+            background-color:blanchedalmond;
+        }
+        .res{
+            border: solid;
+            border-radius: 2px;
+            margin-left: 300px;
+            margin-right: 300px;
+            
+        }
+        @media screen and (min-width:600px) {
+            .res{
+                flex:column;
+            }
+            
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="res">
+    <h1>Calculator</h1><br><br>
+    <table align="center">
+        <tr>
+            <td><input type="button" value="C" onclick="c()"></td>
+            <td colspan="2"><input class="box" type="text" id="screen"></td>
+            <td><input type="button" value="=" onclick="output()"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="7" onclick="number('7')"></td>
+            <td><input type="button" value="8" onclick="number('8')"></td>
+            <td><input type="button" value="9" onclick="number('9')"></td>
+            <td><input type="button" value="+" onclick="number('+')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" onclick="number('4')"></td>
+            <td><input type="button" value="5" onclick="number('5')"></td>
+            <td><input type="button" value="6" onclick="number('6')"></td>
+            <td><input type="button" value="-" onclick="number('-')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="1" onclick="number('1')"></td>
+            <td><input type="button" value="2" onclick="number('2')"></td>
+            <td><input type="button" value="3" onclick="number('3')"></td>
+            <td><input type="button" value="X" onclick="number('*')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="%" onclick="number('%')"></td>
+            <td><input type="button" value="0" onclick="number('0')"></td>
+            <td><input type="button" value="." onclick="number('.')"></td>
+            <td><input type="button" value="/" onclick="number('/')"></td>
+        </tr>
+    </table><br><br>
+</div>
+    <script>
+        function c(){
+            document.getElementById("screen").value = "";
+        }
+        function number(value){
+            document.getElementById("screen").value+=value;
+        }
+        function output() {
+    var a = document.getElementById("screen").value;
+    var b = eval(a);
+    document.getElementById("screen").value = b;
+}
+    </script>
+</body>
+</html>
