@@ -1,0 +1,24 @@
+<!-- 1.Take a sentence as an input and reverse every word in that sentence. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var c=prompt("enter a sentance:")
+        document.writeln(c,"<br>")
+var reverseSentence = c => {
+   var arr = c.split(" ");
+   var ulta = arr.map(mh => {
+      return mh.split('').reverse().join("");
+   });
+   return ulta.join(" ");
+};
+document.writeln(reverseSentence(c));
+    </script>
+</body>
+</html>
