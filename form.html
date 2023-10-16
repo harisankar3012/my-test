@@ -1,0 +1,97 @@
+<!-- Create a survey form with Fields; First Name, Last Name, Date of Birth, Country (dropdown), Gender (checkbox), Profession, email, and mobile number. All the input fields are necessary to submit the form. Create two buttons Submit and Reset. Reset will reset the form while clicking on submit, first, it will check all the fields and necessary validations and then a popup will appear displaying all the selected values with labels in front of it. On closing the popup, the form should reset all the values. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Survey Form</title>
+  <style>
+    h1{
+      text-align: center;
+      color: crimson;
+    }
+    #sf{
+      text-align: center;
+    
+    }
+   
+  </style>
+</head>
+<body>
+  <h1>Survey Form</h1>
+  <form id="sf">
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" required><br><br>
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" required><br><br>
+
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" required><br><br>
+
+    <label for="country">Country:</label>
+    <select id="country" required>
+      <option value="USA">USA</option>
+      <option value="Canada">Canada</option>
+      <option value="UK">UK</option>
+    </select><br><br>
+
+    <label>Gender:</label>
+    <input type="checkbox" id="male" name="gender" value="Male"> Male
+    <input type="checkbox" id="female" name="gender" value="Female"> Female<br><br>
+
+    <label for="profession">Profession:</label>
+    <input type="text" id="profession" required><br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" required><br><br>
+
+    <label for="mobile">Mobile Number:</label>
+    <input type="tel" id="mobile" required><br><br>
+
+    <button type="button" id="submitButton">Submit</button>
+    <button type="button" id="resetButton">Reset</button>
+  </form>
+
+  <div id="popup" style="display: none;">
+    <h2>Survey Form Submission</h2>
+    <ul>
+      <li>First Name: <span id="pf"></span></li>
+      <li>Last Name: <span id="pl"></span></li>
+      <li>Date of Birth: <span id="pd"></span></li>
+      <li>Country: <span id="pc"></span></li>
+      <li>Gender: <span id="pg"></span></li>
+      <li>Profession: <span id="pp"></span></li>
+      <li>Email: <span id="pe"></span></li>
+      <li>Mobile Number: <span id="pm"></span></li>
+    </ul>
+  </div>
+
+  <script>
+    const form = document.getElementById('sf');
+    const popup = document.getElementById('popup');
+
+    const submitButton = document.getElementById('submitButton');
+    const resetButton = document.getElementById('resetButton');
+
+    submitButton.addEventListener('click', () => {
+      if (form.checkValidity()) {
+        
+        document.getElementById('pf').textContent = document.getElementById('firstName').value;
+        document.getElementById('pl').textContent = document.getElementById('lastName').value;
+        document.getElementById('pd').textContent = document.getElementById('dob').value;
+        document.getElementById('pc').textContent = document.getElementById('country').value;
+        document.getElementById('pg').textContent = [...document.getElementsByName('gender')].filter(checkbox => checkbox.checked).map(checkbox => checkbox.value).join(', ');
+        document.getElementById('pp').textContent = document.getElementById('profession').value;
+        document.getElementById('pe').textContent = document.getElementById('email').value;
+        document.getElementById('pm').textContent = document.getElementById('mobile').value;
+        popup.style.display = 'block';
+      }
+    });
+
+    resetButton.addEventListener('click', () => {
+      form.reset();
+      popup.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
