@@ -1,5 +1,5 @@
 # my-test
- i am panchireddi harisankar narayan,i here by uploaded my assesment of java,javascript and html.
+ i am panchireddi harisankar narayan,i here by uploaded my assesment of java,javascript and html,the java script questions are also saved with .html extension only please check it.
  i am familiar with java,python,html,css,cybersecurity and some basic concepts of javascript.
  i done my term paper on cloud computing and mini project and main project are in cybersecurity.
 my linked in profile is:https://www.linkedin.com/in/harisankar-narayan-panchireddi-205219232/
